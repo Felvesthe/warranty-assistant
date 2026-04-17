@@ -1,1 +1,14 @@
-{"project_hash":"a109464c-69d5-40ff-8ced-d20d8f87a2a8"}
+{
+    "project_hash": "a109464c-69d5-40ff-8ced-d20d8f87a2a8",
+    "components": {
+        "card": {
+            "installationTime": 1776371945
+        },
+        "heading": {
+            "installationTime": 1776372042
+        },
+        "link": {
+            "installationTime": 1776372268
+        }
+    }
+}

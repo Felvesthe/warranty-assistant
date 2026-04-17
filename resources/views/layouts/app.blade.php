@@ -11,9 +11,13 @@
         @livewireStyles
     </head>
     <body class="antialiased nativephp-safe-area">
+        <x-top-bar />
+
         <div class="mx-3">
             {{ $slot }}
         </div>
+
+        <x-navigation />
 
         @livewireScriptConfig
     </body>

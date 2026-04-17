@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Casts\AsPrice;
 use App\Enums\Category;
 use App\Enums\Warranty;
 use Database\Factories\ItemFactory;
@@ -45,6 +46,7 @@ class Item extends Model
             'category' => Category::class,
             'date_of_purchase' => 'date:d/m/Y',
             'warranty_period' => Warranty::class,
+            'price' => AsPrice::class,
         ];
     }
 }

@@ -2,6 +2,25 @@
     "files": {
         "resources/js/utils.js": [
             "dark-theme"
+        ],
+        "resources/js/components/select.js": [
+            "select"
+        ]
+    },
+    "helpers": {
+        "popup": [
+            "select"
+        ]
+    },
+    "internalDependencies": {
+        "icon": [
+            "input",
+            "error",
+            "select",
+            "button"
+        ],
+        "text": [
+            "select"
         ]
     }
 }

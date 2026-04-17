@@ -17,7 +17,7 @@
         id="add-item"
         icon="add"
         :label="__('Add')"
-        url="/items/create"
+        :url="route('items:create')"
         :active="Route::is('items:create')"
     />
     <native:bottom-nav-item

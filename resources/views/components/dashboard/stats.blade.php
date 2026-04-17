@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Models\Product;
+use App\Models\Item;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
 

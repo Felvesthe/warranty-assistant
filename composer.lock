@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c12521ef0f018e87a1daaad380ba3656",
+    "content-hash": "3056b96f6d0ede5c587e37c1e3890502",
     "packages": [
         {
             "name": "archtechx/enums",
@@ -4587,6 +4587,57 @@
                 "source": "https://github.com/NativePHP/mobile-air/tree/3.2.3"
             },
             "time": "2026-04-10T19:30:15+00:00"
+        },
+        {
+            "name": "nativephp/mobile-camera",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NativePHP/mobile-camera.git",
+                "reference": "cdc630767da2dca7bbcc91584fbe8267ea5a55e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NativePHP/mobile-camera/zipball/cdc630767da2dca7bbcc91584fbe8267ea5a55e7",
+                "reference": "cdc630767da2dca7bbcc91584fbe8267ea5a55e7",
+                "shasum": ""
+            },
+            "require": {
+                "nativephp/mobile": "*",
+                "php": "^8.2"
+            },
+            "type": "nativephp-plugin",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Native\\Mobile\\Providers\\CameraServiceProvider"
+                    ]
+                },
+                "nativephp": {
+                    "manifest": "nativephp.json"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Native\\Mobile\\Providers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "NativePHP",
+                    "email": "info@nativephp.com"
+                }
+            ],
+            "description": "Camera plugin for NativePHP Mobile (Photo capture, Video recording, Gallery picker)",
+            "support": {
+                "issues": "https://github.com/NativePHP/mobile-camera/issues",
+                "source": "https://github.com/NativePHP/mobile-camera/tree/1.0.2"
+            },
+            "time": "2026-04-01T20:29:25+00:00"
         },
         {
             "name": "nesbot/carbon",

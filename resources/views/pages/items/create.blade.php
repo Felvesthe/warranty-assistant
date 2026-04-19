@@ -20,6 +20,8 @@ new class extends Component {
     public function save(): void
     {
         $this->form->store();
+
+        $this->redirectRoute('items:index');
     }
 
     public function takePhoto(): void

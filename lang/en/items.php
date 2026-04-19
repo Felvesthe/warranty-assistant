@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 return [
     'item_name' => 'Item name',
+    'items_not_found' => 'No items found.',
 
     'form' => [
         'add_item' => 'Add item',

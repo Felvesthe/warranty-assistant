@@ -17,10 +17,14 @@
             "input",
             "error",
             "select",
-            "button"
+            "button",
+            "badge"
         ],
         "text": [
             "select"
+        ],
+        "button": [
+            "badge"
         ]
     }
 }

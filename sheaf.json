@@ -32,7 +32,7 @@
             "installationTime": 1776414901
         },
         "text": {
-            "installationTime": 1776414902
+            "installationTime": 1776630396
         },
         "textarea": {
             "installationTime": 1776415589
@@ -42,6 +42,12 @@
         },
         "fieldset": {
             "installationTime": 1776423668
+        },
+        "badge": {
+            "installationTime": 1776600617
+        },
+        "empty": {
+            "installationTime": 1776627641
         }
     }
 }

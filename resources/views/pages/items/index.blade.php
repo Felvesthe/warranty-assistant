@@ -110,10 +110,10 @@ new class extends Component {
                     <x-ui.badge variant="outline" :color="$this->getColor($item->days_of_warranty)" size="sm" class="uppercase" pill>
                         @if ($item->warranty_period === Warranty::None || $item->warranty_period === Warranty::Lifetime)
                             {{ $item->warranty_period->label() }}
-                        @elseif ($item->days_of_warranty === 0)
-                            {{ __('warranties.none') }}
-                        @else
+                        @elseif ($item->days_of_warranty >= 0)
                             {{ $this->daysLeft($item->days_of_warranty) }}
+                        @else
+                            {{ __('warranties.none') }}
                         @endif
                     </x-ui.badge>
                 </x-ui.card>

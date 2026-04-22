@@ -7,7 +7,6 @@ namespace App\Models;
 use App\Casts\AsPrice;
 use App\Enums\Category;
 use App\Enums\Warranty;
-use Carbon\Carbon;
 use Database\Factories\ItemFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -47,9 +46,7 @@ class Item extends Model
     public function daysOfWarranty(): Attribute
     {
         return Attribute::make(
-            get: fn () => Carbon::now()
-                ->daysUntil($this->warranty_expiration_date)
-                ->count()
+            get: fn () => (int) now()->diffInDays($this->warranty_expiration_date)
         )->shouldCache();
     }
 

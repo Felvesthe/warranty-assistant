@@ -70,6 +70,8 @@ new class extends Component {
     <x-page-heading>{{ __('items.form.add_item') }}</x-page-heading>
 
     <form wire:submit="save" class="grid grid-cols-2 gap-x-2.5 gap-y-5">
+        @csrf
+
         <x-ui.fieldset class="col-span-full shadow">
             @if ($form->proofOfPurchase)
                 <div class="relative flex justify-center items-center">

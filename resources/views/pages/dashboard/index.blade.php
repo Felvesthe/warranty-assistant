@@ -29,5 +29,16 @@ new class extends Component
         </x-ui.link>
     </div>
 
-    <x-dashboard.empty-card />
+    <x-ui.empty>
+        <x-ui.empty.media>
+            <x-lucide-sparkles class="w-10" />
+        </x-ui.empty.media>
+
+        <x-ui.empty.contents>
+            <x-ui.heading>{{ __('dashboard.nothing_here') }}</x-ui.heading>
+            <x-ui.text class="opacity-70">
+                {{ __('dashboard.equipment_is_safe') }}
+            </x-ui.text>
+        </x-ui.empty.contents>
+    </x-ui.empty>
 </div>

@@ -3,11 +3,31 @@
 declare(strict_types=1);
 
 use App\Models\Item;
+use App\ValueObjects\Price;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
+use Carbon\Carbon;
 
 new class extends Component {
-    //
+    #[Computed]
+    public function totalValue(): int
+    {
+        return Item::sum('price');
+    }
+
+    #[Computed]
+    public function totalItemsCount(): int
+    {
+        return Item::count();
+    }
+
+    #[Computed]
+    public function activeWarrantyItemsCount(): int
+    {
+        return Item::query()
+            ->whereDate('warranty_expiration_date', '>=', Carbon::now()->setTime(23, 59, 59))
+            ->count();
+    }
 };
 ?>
 
@@ -18,7 +38,7 @@ new class extends Component {
             iconTextColor="text-blue-600"
             iconBgColor="bg-blue-100"
             :title="__('dashboard.equipment_value')"
-            value="0,00 PLN"
+            :value="Price::fromCent($this->totalValue)->formatted"
         />
 
         <x-dashboard.card
@@ -26,7 +46,7 @@ new class extends Component {
             iconTextColor="text-green-600"
             iconBgColor="bg-green-100"
             :title="__('dashboard.active_warranties')"
-            value="0 / 0"
+            :value="$this->activeWarrantyItemsCount . ' / ' . $this->totalItemsCount"
         />
     </div>
 </div>

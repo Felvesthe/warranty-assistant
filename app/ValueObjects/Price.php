@@ -10,10 +10,18 @@ readonly class Price
 
     public float $dollar;
 
+    public string $formatted;
+
     public function __construct(int $cent)
     {
         $this->cent = $cent;
         $this->dollar = $cent / 100;
+        $this->formatted = number_format(
+            num: $this->dollar,
+            decimals: 2,
+            decimal_separator: ',',
+            thousands_separator: ' ',
+        );
     }
 
     public static function fromCent(int $cent): self

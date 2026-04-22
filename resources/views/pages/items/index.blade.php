@@ -1,7 +1,6 @@
 <?php
 
 use App\Enums\Category;
-use App\Enums\Warranty;
 use App\Models\Item;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -28,20 +27,6 @@ new class extends Component {
     public function changeCategory(?Category $category): void
     {
         $this->selectedCategory = $category;
-    }
-
-    public function getColor(int $warrantyLength): string
-    {
-        return match (true) {
-            $warrantyLength <= 7 => 'red',
-            $warrantyLength <= 30 => 'yellow',
-            default => 'green',
-        };
-    }
-
-    public function daysLeft(int $warrantyLength): string
-    {
-        return $warrantyLength . ' ' . __($warrantyLength === 1 ? 'Day' : 'Days');
     }
 };
 ?>
@@ -96,27 +81,7 @@ new class extends Component {
             </x-ui.empty>
         @else
             @foreach ($this->items as $item)
-                <x-ui.card class="flex justify-between items-center shadow" :wire:key="$item->id">
-                    <div class="flex items-center gap-3">
-                        <x-dynamic-component
-                            :component="'lucide-' . $item->category->icon()"
-                            class="p-2 w-8 bg-primary text-primary-fg rounded-full"
-                        />
-                        <div>
-                            <p class="text-sm font-bold">{{ $item->name }}</p>
-                            <p class="text-xs">{{ $item->price->dollar }}</p>
-                        </div>
-                    </div>
-                    <x-ui.badge variant="outline" :color="$this->getColor($item->days_of_warranty)" size="sm" class="uppercase" pill>
-                        @if ($item->warranty_period === Warranty::None || $item->warranty_period === Warranty::Lifetime)
-                            {{ $item->warranty_period->label() }}
-                        @elseif ($item->days_of_warranty >= 0)
-                            {{ $this->daysLeft($item->days_of_warranty) }}
-                        @else
-                            {{ __('warranties.none') }}
-                        @endif
-                    </x-ui.badge>
-                </x-ui.card>
+                <livewire:item-card :$item />
             @endforeach
         @endif
     </div>

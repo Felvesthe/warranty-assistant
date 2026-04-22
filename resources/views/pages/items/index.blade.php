@@ -107,13 +107,13 @@ new class extends Component {
                             <p class="text-xs">{{ $item->price->dollar }}</p>
                         </div>
                     </div>
-                    <x-ui.badge variant="outline" :color="$this->getColor($item->daysOfWarranty)" size="sm" class="uppercase" pill>
+                    <x-ui.badge variant="outline" :color="$this->getColor($item->days_of_warranty)" size="sm" class="uppercase" pill>
                         @if ($item->warranty_period === Warranty::None || $item->warranty_period === Warranty::Lifetime)
                             {{ $item->warranty_period->label() }}
-                        @elseif ($item->daysOfWarranty === 0)
+                        @elseif ($item->days_of_warranty === 0)
                             {{ __('warranties.none') }}
                         @else
-                            {{ $this->daysLeft($item->daysOfWarranty) }}
+                            {{ $this->daysLeft($item->days_of_warranty) }}
                         @endif
                     </x-ui.badge>
                 </x-ui.card>

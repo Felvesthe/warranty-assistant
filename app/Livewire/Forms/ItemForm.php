@@ -4,17 +4,26 @@ declare(strict_types=1);
 
 namespace App\Livewire\Forms;
 
+use App\Actions\CreateItem;
 use App\Enums\Category;
 use App\Enums\Warranty;
-use App\Models\Item;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 use Throwable;
 
+/**
+ * @phpstan-type ValidatedData array{
+ *     name: string,
+ *     price: string,
+ *     category: Category,
+ *     dateOfPurchase: string,
+ *     warranty: Warranty,
+ *     serialNumber: ?string,
+ *     notes: ?string,
+ *     proofOfPurchase: string
+ * }
+ */
 class ItemForm extends Form
 {
     #[Validate]
@@ -46,27 +55,11 @@ class ItemForm extends Form
      */
     public function store(): void
     {
-        $this->validate();
+        /** @var ValidatedData $validated */
+        $validated = $this->validate();
 
-        DB::transaction(function (): void {
-            $convertedPrice = (float) str_replace([' ', ','], ['', '.'], $this->price);
-            $purchaseDate = Carbon::createFromFormat('d/m/Y', $this->dateOfPurchase);
-
-            $item = Item::create([
-                'name' => $this->name,
-                'price' => $convertedPrice,
-                'category' => $this->category,
-                'date_of_purchase' => $purchaseDate,
-                'warranty_period' => $this->warranty,
-                'serial_number' => $this->serialNumber,
-                'notes' => $this->notes,
-            ]);
-
-            $item->file()->create([
-                'type' => Storage::mimeType($this->proofOfPurchase),
-                'path' => $this->proofOfPurchase,
-            ]);
-        });
+        app(CreateItem::class)
+            ->execute($validated);
 
         $this->reset();
     }

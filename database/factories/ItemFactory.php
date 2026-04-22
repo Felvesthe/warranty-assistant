@@ -24,6 +24,7 @@ class ItemFactory extends Factory
             'category' => $this->faker->randomElement(Category::cases()),
             'date_of_purchase' => $this->faker->dateTimeBetween('-5 years'),
             'warranty_period' => $this->faker->randomElement(Warranty::cases()),
+            'warranty_expiration_date' => $this->faker->dateTimeBetween('-3 years'),
             'price' => $this->faker->numberBetween(100_000),
             'serial_number' => $this->faker->md5(),
             'notes' => $this->faker->paragraph(),

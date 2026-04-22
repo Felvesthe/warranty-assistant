@@ -8,7 +8,6 @@ use App\Casts\AsPrice;
 use App\Enums\Category;
 use App\Enums\Warranty;
 use Carbon\Carbon;
-use Carbon\CarbonImmutable;
 use Database\Factories\ItemFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -22,6 +21,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
     'category',
     'date_of_purchase',
     'warranty_period',
+    'warranty_expiration_date',
     'price',
     'serial_number',
     'notes',
@@ -47,22 +47,10 @@ class Item extends Model
     public function daysOfWarranty(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->calculateDaysOfWarrantyLeft()
+            get: fn () => Carbon::now()
+                ->daysUntil($this->warranty_expiration_date)
+                ->count()
         )->shouldCache();
-    }
-
-    private function calculateDaysOfWarrantyLeft(): int
-    {
-        /** @var CarbonImmutable $dateOfPurchase */
-        $dateOfPurchase = $this->date_of_purchase;
-
-        /** @var Warranty $warrantyPeriod */
-        $warrantyPeriod = $this->warranty_period;
-        $endDate = $dateOfPurchase->addMonths($warrantyPeriod->value);
-
-        return Carbon::now()
-            ->daysUntil($endDate)
-            ->count();
     }
 
     protected function casts(): array
@@ -71,6 +59,7 @@ class Item extends Model
             'category' => Category::class,
             'date_of_purchase' => 'date:d/m/Y',
             'warranty_period' => Warranty::class,
+            'warranty_expiration_date' => 'date:d/m/Y',
             'price' => AsPrice::class,
         ];
     }

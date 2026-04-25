@@ -79,9 +79,9 @@ new class extends Component {
 
 <div>
     <div class="flex justify-between items-center mt-4 mb-8">
-        <button @click="history.back()" class="px-1">
+        <a href="{{ route('items:index') }}" class="px-1">
             <x-lucide-chevron-left class="w-6"/>
-        </button>
+        </a>
 
         <div class="flex items-center gap-5">
             <button wire:click="shareItemInfo" class="px-1">

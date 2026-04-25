@@ -81,7 +81,7 @@ new class extends Component {
             </x-ui.empty>
         @else
             @foreach ($this->items as $item)
-                <livewire:item-card :$item />
+                <x-item-card :$item />
             @endforeach
         @endif
     </div>

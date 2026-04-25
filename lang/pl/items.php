@@ -5,6 +5,7 @@ declare(strict_types=1);
 return [
     'item_name' => 'Nazwa przedmiotu',
     'items_not_found' => 'Nie znaleziono przedmiotów.',
+    'valid_warranty' => 'Ważna',
 
     'form' => [
         'add_item' => 'Dodaj przedmiot',

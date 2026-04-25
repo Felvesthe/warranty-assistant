@@ -58,7 +58,7 @@ new class extends Component {
     @else
         <div class="space-y-3">
             @foreach ($this->itemsWarrantyExpiring as $item)
-                <livewire:item-card :$item :showDate="true" />
+                <x-item-card :$item :showDate="true" />
             @endforeach
         </div>
     @endif

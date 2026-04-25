@@ -3,6 +3,7 @@
 use App\Enums\Category;
 use App\Enums\Warranty;
 use App\Livewire\Forms\ItemForm;
+use App\Models\Item;
 use Carbon\Carbon;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -13,13 +14,24 @@ use Native\Mobile\Facades\Camera;
 use Native\Mobile\Facades\File;
 use Symfony\Component\Mime\MimeTypes;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 new class extends Component {
+    public ?Item $item = null;
     public ItemForm $form;
+
+    public function mount(): void
+    {
+        if ($this->item !== null) {
+            $this->form->setItem($this->item);
+        }
+    }
 
     public function save(): void
     {
-        $this->form->store();
+        $this->item === null
+            ? $this->form->store()
+            : $this->form->update();
 
         $this->redirectRoute('items:index');
     }
@@ -67,17 +79,19 @@ new class extends Component {
 ?>
 
 <div>
-    <x-page-heading>{{ __('items.form.add_item') }}</x-page-heading>
+    <x-page-heading>
+        {{ __($item === null ? 'items.form.add_item' : 'items.form.edit_item') }}
+    </x-page-heading>
 
     <form wire:submit="save" class="grid grid-cols-2 gap-x-2.5 gap-y-5">
         @csrf
 
         <x-ui.fieldset class="col-span-full shadow">
-            @if ($form->proofOfPurchase)
+            @if ($form->proofOfPurchase && Storage::exists($form->proofOfPurchase))
                 <div class="relative flex justify-center items-center">
                     <img src="{{ Storage::url($form->proofOfPurchase) }}" alt="" class="max-w-32">
                     <button wire:click="deleteUploadedImage" class="absolute top-0 right-0 p-2 bg-primary text-primary-content rounded-lg cursor-pointer">
-                        <x-ui.icon name="x-circle" />
+                        <x-ui.icon name="x-circle"/>
                     </button>
                 </div>
             @else
@@ -100,7 +114,7 @@ new class extends Component {
                         <p class="text-xs">{{ __('items.form.touch_to_choose_photo') }}</p>
                     </x-ui.card>
 
-                    <x-ui.error name="form.proofOfPurchase" class="col-span-full" />
+                    <x-ui.error name="form.proofOfPurchase" class="col-span-full"/>
                 </x-ui.field>
             @endif
         </x-ui.fieldset>
@@ -129,7 +143,7 @@ new class extends Component {
                     </x-ui.select.option>
                 @endforeach
             </x-ui.select>
-            <x-ui.error name="form.category" />
+            <x-ui.error name="form.category"/>
         </x-ui.field>
 
         <x-ui.field required>
@@ -140,7 +154,7 @@ new class extends Component {
                 placeholder="0,00"
                 leftIcon="currency-dollar"
             />
-            <x-ui.error name="form.price" />
+            <x-ui.error name="form.price"/>
         </x-ui.field>
 
         <x-ui.field required>
@@ -168,7 +182,7 @@ new class extends Component {
                     </x-ui.select.option>
                 @endforeach
             </x-ui.select>
-            <x-ui.error name="form.warranty" />
+            <x-ui.error name="form.warranty"/>
         </x-ui.field>
 
         <x-ui.field class="col-span-full">

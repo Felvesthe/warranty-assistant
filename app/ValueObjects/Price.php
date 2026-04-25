@@ -35,4 +35,14 @@ readonly class Price
 
         return new self($cent);
     }
+
+    public function __toString(): string
+    {
+        return number_format(
+            num: $this->dollar,
+            decimals: 2,
+            decimal_separator: ',',
+            thousands_separator: '',
+        );
+    }
 }

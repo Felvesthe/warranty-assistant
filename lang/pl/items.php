@@ -9,6 +9,7 @@ return [
 
     'form' => [
         'add_item' => 'Dodaj przedmiot',
+        'edit_item' => 'Edytuj przedmiot',
         'take_photo' => 'Zrób zdjęcie',
         'touch_to_use_camera' => 'Dotknij aby użyć aparatu',
         'choose_photo' => 'Wybierz z galerii',

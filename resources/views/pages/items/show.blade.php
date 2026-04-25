@@ -2,6 +2,7 @@
 
 use App\Actions\DeleteItem;
 use App\Models\Item;
+use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
 use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Events\Alert\ButtonPressed;
@@ -20,6 +21,11 @@ new class extends Component {
             text: $this->buildShareMessage(),
             filePath: Storage::path($this->item->file->path),
         );
+    }
+
+    public function openEditForm(): void
+    {
+        $this->redirectRoute('items:edit', ['item' => $this->item]);
     }
 
     public function openDeleteDialog(): void
@@ -82,7 +88,7 @@ new class extends Component {
                 <x-lucide-share-2 class="w-6"/>
             </button>
 
-            <button class="px-1">
+            <button wire:click="openEditForm" class="px-1">
                 <x-lucide-edit class="w-6"/>
             </button>
 
@@ -194,7 +200,7 @@ new class extends Component {
         </x-ui.heading>
 
         <x-ui.card class="flex justify-center items-center p-0 max-h-64 rounded-lg overflow-hidden">
-            <x-image-preview src="{{ Storage::url($item->file->path) }}" />
+            <x-image-preview src="{{ Storage::url($item->file->path) }}"/>
         </x-ui.card>
     @endif
 </div>

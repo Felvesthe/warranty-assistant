@@ -9,6 +9,7 @@ return [
 
     'form' => [
         'add_item' => 'Add item',
+        'edit_item' => 'Edit item',
         'take_photo' => 'Take photo',
         'touch_to_use_camera' => 'Touch to use camera',
         'choose_photo' => 'Choose from gallery',

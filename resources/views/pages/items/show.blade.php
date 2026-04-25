@@ -115,7 +115,7 @@ new class extends Component {
         <livewire:warranty-badge class="mb-6" :$item :withText="true"/>
     </div>
 
-    <button class="flex justify-between items-center mb-3 p-4 w-full bg-indigo-100 rounded-lg">
+    <a href="{{ route('items:services:index', $item) }}" class="flex justify-between items-center mb-3 p-4 w-full bg-indigo-100 rounded-lg">
         <div class="flex justify-center items-center">
             <x-lucide-wrench class="p-2 w-10 bg-indigo-600/10 text-indigo-600 rounded-full"/>
             <div class="flex justify-center items-start flex-col ml-3">
@@ -131,7 +131,7 @@ new class extends Component {
         </div>
 
         <x-lucide-chevron-right class="w-5"/>
-    </button>
+    </a>
 
     <x-ui.card class="mb-3 shadow">
         <x-ui.heading level="h3" class="mb-3 uppercase">

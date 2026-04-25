@@ -187,6 +187,7 @@ return [
         'date' => 'data',
         'date_of_birth' => 'data urodzenia',
         'date_of_purchase' => 'data zakupu',
+        'date_of_service' => 'data serwisu',
         'dates' => 'daty',
         'day' => 'dzień',
         'deleted_at' => 'skasowano',

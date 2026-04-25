@@ -9,4 +9,7 @@ Route::prefix('items')->as('items:')->group(function (): void {
     Route::livewire('create', 'pages::items.form')->name('create');
     Route::livewire('{item}', 'pages::items.show')->name('show');
     Route::livewire('{item}/edit', 'pages::items.form')->name('edit');
+
+    Route::livewire('{item}/services', 'pages::services.index')->name('services:index');
+    Route::livewire('{item}/services/create', 'pages::services.create')->name('services:create');
 });

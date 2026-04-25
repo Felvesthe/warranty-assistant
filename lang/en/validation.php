@@ -187,6 +187,7 @@ return [
         'date' => 'date',
         'date_of_birth' => 'date of birth',
         'date_of_purchase' => 'date of purchase',
+        'date_of_service' => 'date of service',
         'dates' => 'dates',
         'day' => 'day',
         'deleted_at' => 'deleted at',

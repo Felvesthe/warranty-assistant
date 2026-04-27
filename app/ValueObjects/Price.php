@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\ValueObjects;
 
+use App\Settings\UserSettings;
+
 readonly class Price
 {
     public int $cent;
@@ -21,7 +23,7 @@ readonly class Price
             decimals: 2,
             decimal_separator: ',',
             thousands_separator: ' ',
-        );
+        ) . ' ' . app(UserSettings::class)->currency->symbol();
     }
 
     public static function fromCent(int $cent): self

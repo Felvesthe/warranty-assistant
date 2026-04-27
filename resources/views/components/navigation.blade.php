@@ -10,7 +10,7 @@
         id="items"
         icon="products"
         :label="__('Items')"
-        url="/items"
+        :url="route('items:index')"
         :active="Route::is('items:index')"
     />
     <native:bottom-nav-item

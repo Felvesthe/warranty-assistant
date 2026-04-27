@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Native\Mobile\Providers\CameraServiceProvider;
+use Native\Mobile\Providers\DeviceServiceProvider;
 use Native\Mobile\Providers\DialogServiceProvider;
 use Native\Mobile\Providers\ShareServiceProvider;
 
@@ -42,6 +43,7 @@ class NativeServiceProvider extends ServiceProvider
             CameraServiceProvider::class,
             ShareServiceProvider::class,
             DialogServiceProvider::class,
+            DeviceServiceProvider::class,
         ];
     }
 }

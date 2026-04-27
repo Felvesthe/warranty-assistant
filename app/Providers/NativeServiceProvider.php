@@ -9,6 +9,7 @@ use Native\Mobile\Providers\CameraServiceProvider;
 use Native\Mobile\Providers\DeviceServiceProvider;
 use Native\Mobile\Providers\DialogServiceProvider;
 use Native\Mobile\Providers\ShareServiceProvider;
+use Native\Mobile\Providers\SystemServiceProvider;
 
 class NativeServiceProvider extends ServiceProvider
 {
@@ -44,6 +45,7 @@ class NativeServiceProvider extends ServiceProvider
             ShareServiceProvider::class,
             DialogServiceProvider::class,
             DeviceServiceProvider::class,
+            SystemServiceProvider::class,
         ];
     }
 }

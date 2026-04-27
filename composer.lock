@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "67d6c1b9012f7b9ab69788c7165fcccb",
+    "content-hash": "a57d1a38253db85b47dff9610a3f0c7b",
     "packages": [
         {
             "name": "archtechx/enums",
@@ -4831,6 +4831,52 @@
             "support": {
                 "issues": "https://github.com/NativePHP/mobile-share/issues",
                 "source": "https://github.com/NativePHP/mobile-share/tree/1.0.1"
+            },
+            "time": "2026-03-20T22:08:33+00:00"
+        },
+        {
+            "name": "nativephp/mobile-system",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NativePHP/mobile-system.git",
+                "reference": "dc861c1ad54985aca536c5ad8a2fe3044c4e9c28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NativePHP/mobile-system/zipball/dc861c1ad54985aca536c5ad8a2fe3044c4e9c28",
+                "reference": "dc861c1ad54985aca536c5ad8a2fe3044c4e9c28",
+                "shasum": ""
+            },
+            "require": {
+                "nativephp/mobile": "^3.0",
+                "nativephp/mobile-device": "*",
+                "php": "^8.2"
+            },
+            "type": "nativephp-plugin",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Native\\Mobile\\Providers\\SystemServiceProvider"
+                    ]
+                },
+                "nativephp": {
+                    "manifest": "nativephp.json"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Native\\Mobile\\Providers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "System-level operations for NativePHP Mobile",
+            "support": {
+                "issues": "https://github.com/NativePHP/mobile-system/issues",
+                "source": "https://github.com/NativePHP/mobile-system/tree/1.0.2"
             },
             "time": "2026-03-20T22:08:33+00:00"
         },

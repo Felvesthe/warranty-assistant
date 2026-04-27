@@ -8,10 +8,15 @@ use Carbon\Carbon;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Native\Mobile\Attributes\OnNative;
+use Native\Mobile\Events\Alert\ButtonPressed;
+use Native\Mobile\Events\Camera\PermissionDenied;
+use Native\Mobile\Events\Camera\PhotoCancelled;
 use Native\Mobile\Events\Camera\PhotoTaken;
 use Native\Mobile\Events\Gallery\MediaSelected;
 use Native\Mobile\Facades\Camera;
+use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\File;
+use Native\Mobile\Facades\System;
 use Symfony\Component\Mime\MimeTypes;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -60,6 +65,26 @@ new class extends Component {
         foreach ($files as $key => $file) {
             $fileExtension = MimeTypes::getDefault()->getExtensions($file['mimeType'])[0];
             $this->processImage($file['path'], $fileExtension);
+        }
+    }
+
+    #[OnNative(PermissionDenied::class)]
+    public function permissionDenied(): void
+    {
+        Dialog::alert(
+            __('permissions.no_permission'),
+            __('permissions.grant_camera_access'),
+            [__('Cancel'), __('Settings')]
+        )
+            ->id('open-app-settings')
+            ->show();
+    }
+
+    #[OnNative(ButtonPressed::class)]
+    public function handleButton(int $index, string $label, ?string $id = null): void
+    {
+        if ($id === 'open-app-settings' && $label === __('Settings')) {
+            System::appSettings();
         }
     }
 

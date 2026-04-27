@@ -41,9 +41,9 @@ $theme = app(UserSettings::class)->theme;
         </script>
     </head>
     <body class="antialiased nativephp-safe-area">
-        <x-top-bar/>
-
         <div class="mx-3">
+            <x-top-bar/>
+
             {{ $slot }}
         </div>
 

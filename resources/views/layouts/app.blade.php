@@ -47,7 +47,7 @@ $theme = app(UserSettings::class)->theme;
             {{ $slot }}
         </div>
 
-        <x-navigation/>
+        <livewire:navigation/>
 
         @livewireScriptConfig
     </body>

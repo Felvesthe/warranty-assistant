@@ -13,3 +13,5 @@ Route::prefix('items')->as('items:')->group(function (): void {
     Route::livewire('{item}/services', 'pages::services.index')->name('services:index');
     Route::livewire('{item}/services/create', 'pages::services.create')->name('services:create');
 });
+
+Route::livewire('settings', 'pages::settings.index')->name('settings:index');

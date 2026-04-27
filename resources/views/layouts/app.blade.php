@@ -1,3 +1,8 @@
+@php
+use App\Settings\UserSettings;
+
+$theme = app(UserSettings::class)->theme;
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -9,15 +14,40 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         @livewireStyles
+
+        <script>
+            window.SheafConfig = {
+                initialTheme: @js($theme)
+            };
+
+            const loadDarkMode = () => {
+                const theme = @js($theme);
+
+                if (
+                    theme === 'dark' ||
+                    (theme === 'system' &&
+                        window.matchMedia('(prefers-color-scheme: dark)')
+                            .matches)
+                ) {
+                    document.documentElement.classList.add('dark')
+                }
+            }
+
+            loadDarkMode();
+
+            document.addEventListener('livewire:navigated', function () {
+                loadDarkMode();
+            });
+        </script>
     </head>
     <body class="antialiased nativephp-safe-area">
-        <x-top-bar />
+        <x-top-bar/>
 
         <div class="mx-3">
             {{ $slot }}
         </div>
 
-        <x-navigation />
+        <x-navigation/>
 
         @livewireScriptConfig
     </body>

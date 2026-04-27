@@ -24,7 +24,7 @@
         id="settings"
         icon="settings"
         :label="__('Settings')"
-        url="/settings"
-        :active="Route::is('settings')"
+        :url="route('settings:index')"
+        :active="Route::is('settings:index')"
     />
 </native:bottom-nav>

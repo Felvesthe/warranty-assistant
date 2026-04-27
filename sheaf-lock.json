@@ -18,13 +18,18 @@
             "error",
             "select",
             "button",
-            "badge"
+            "badge",
+            "dropdown"
         ],
         "text": [
             "select"
         ],
         "button": [
-            "badge"
+            "badge",
+            "theme-switcher"
+        ],
+        "dropdown": [
+            "theme-switcher"
         ]
     }
 }

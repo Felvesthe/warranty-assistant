@@ -51,6 +51,12 @@
         },
         "separator": {
             "installationTime": 1776895265
+        },
+        "theme-switcher": {
+            "installationTime": 1777223448
+        },
+        "dropdown": {
+            "installationTime": 1777223451
         }
     }
 }

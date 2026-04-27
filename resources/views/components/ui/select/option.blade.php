@@ -40,23 +40,23 @@
     ];
 @endphp
 
-<li 
+<li
     data-search="{{ $searchLabel }}"
     data-label="{{ $label }}"
     value="{{ $value }}"
     data-slot="option"
     x-rover:option
-    
-    {{-- morph will remove data-value for none changed els so the init ain't rerun --}} 
+
+    {{-- morph will remove data-value for none changed els so the init ain't rerun --}}
     wire:ignore.self
-    
+
     @if($disabled) disabled aria-disabled="true" @endif
 
     {{ $attributes->class($classes) }}
 >
     @if (!$allowCustomSlots)
         {{-- Check Icon for selected state --}}
-        <x-ui.icon 
+        <x-ui.icon
             :name="$checkIcon"
             @class([
                 'z-10 place-self-center opacity-0 group-data-selected:opacity-100 size-[1.15rem]',
@@ -66,12 +66,12 @@
 
         {{-- Optional icon --}}
         @if (filled($icon))
-            <x-ui.icon 
+            <x-ui.icon
                 :name="$icon"
                 @class([
                     'z-10 pl-1.5',
                     $iconClass
-                ]) 
+                ])
             />
         @endif
 

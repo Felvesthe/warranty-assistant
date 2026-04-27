@@ -1,6 +1,6 @@
 @props(['icon'])
 
-<button {{ $attributes->merge(['class' => 'flex items-center gap-4 m-3']) }}>
+<button {{ $attributes->merge(['class' => 'flex items-center gap-4 m-3 w-full']) }}>
     <x-dynamic-component
         :component="'lucide-' . $icon"
         class="p-2.5 w-10 text-indigo-600 bg-indigo-100 rounded-full"

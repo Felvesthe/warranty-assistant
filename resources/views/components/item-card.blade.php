@@ -12,7 +12,7 @@
             />
             <div>
                 <p class="text-sm font-bold">{{ $item->name }}</p>
-                <p class="text-xs">{{ $item->price->dollar }}</p>
+                <p class="text-xs">{{ $item->price->formatted }}</p>
             </div>
         </div>
         <div class="flex justify-center items-end flex-col gap-1.5">

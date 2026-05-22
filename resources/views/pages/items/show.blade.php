@@ -79,20 +79,20 @@ new class extends Component {
 
 <div>
     <div class="flex justify-between items-center mt-4 mb-8">
-        <a href="{{ route('items:index') }}" class="px-1">
+        <a href="{{ route('items:index') }}" class="px-1 active:opacity-60 transition-opacity">
             <x-lucide-chevron-left class="w-6"/>
         </a>
 
         <div class="flex items-center gap-5">
-            <button wire:click="shareItemInfo" class="px-1">
+            <button wire:click="shareItemInfo" class="px-1 active:opacity-60 transition-opacity">
                 <x-lucide-share-2 class="w-6"/>
             </button>
 
-            <button wire:click="openEditForm" class="px-1">
+            <button wire:click="openEditForm" class="px-1 active:opacity-60 transition-opacity">
                 <x-lucide-edit class="w-6"/>
             </button>
 
-            <button wire:click="openDeleteDialog" class="px-1 text-red-700">
+            <button wire:click="openDeleteDialog" class="px-1 text-red-600 dark:text-red-400 active:opacity-60 transition-opacity">
                 <x-lucide-trash-2 class="w-6"/>
             </button>
         </div>
@@ -101,7 +101,7 @@ new class extends Component {
     <div class="flex justify-center items-center flex-col">
         <x-dynamic-component
             :component="'lucide-' . $item->category->icon()"
-            class="mb-3 p-4 w-16 bg-indigo-600/10 text-indigo-600 rounded-full"
+            class="mb-3 p-4 w-16 bg-indigo-600/10 text-indigo-600 dark:bg-indigo-400/15 dark:text-indigo-400 rounded-full"
         />
 
         <x-ui.heading level="h1" size="lg" class="font-bold">
@@ -115,9 +115,9 @@ new class extends Component {
         <livewire:warranty-badge class="mb-6" :$item :withText="true"/>
     </div>
 
-    <a href="{{ route('items:services:index', $item) }}" class="flex justify-between items-center mb-3 p-4 w-full bg-indigo-100 rounded-lg">
+    <a href="{{ route('items:services:index', $item) }}" class="flex justify-between items-center mb-3 p-4 w-full bg-indigo-100 dark:bg-indigo-800/40 rounded-lg active:opacity-80 transition-opacity">
         <div class="flex justify-center items-center">
-            <x-lucide-wrench class="p-2 w-10 bg-indigo-600/10 text-indigo-600 rounded-full"/>
+            <x-lucide-wrench class="p-2 w-10 bg-indigo-600/10 text-indigo-600 dark:bg-indigo-400/15 dark:text-indigo-400 rounded-full"/>
             <div class="flex justify-center items-start flex-col ml-3">
                 <p class="font-bold">{{ __('services.service_history') }}</p>
                 <p class="text-sm">

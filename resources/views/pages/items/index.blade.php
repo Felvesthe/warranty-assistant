@@ -42,7 +42,8 @@ new class extends Component {
     <div class="flex items-center gap-1.5 overflow-x-scroll">
         <x-ui.badge
             size="lg"
-            :color="is_null($selectedCategory) ? 'violet' : ''"
+            :color="is_null($selectedCategory) ? 'indigo' : ''"
+            variant="solid"
             wire:click="changeCategory(null)"
             pill
         >
@@ -52,7 +53,8 @@ new class extends Component {
         @foreach (Category::cases() as $category)
             <x-ui.badge
                 size="lg"
-                :color="$selectedCategory === $category ? 'violet' : ''"
+                :color="$selectedCategory === $category ? 'indigo' : ''"
+                variant="solid"
                 wire:click="changeCategory('{{ $category }}')"
                 pill
             >

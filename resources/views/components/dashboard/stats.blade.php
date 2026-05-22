@@ -35,16 +35,16 @@ new class extends Component {
     <div class="grid grid-cols-2 gap-2">
         <x-dashboard.card
             icon="calculator"
-            iconTextColor="text-blue-600"
-            iconBgColor="bg-blue-100"
+            iconTextColor="text-blue-600 dark:text-blue-400"
+            iconBgColor="bg-blue-100 dark:bg-blue-900/30"
             :title="__('dashboard.equipment_value')"
             :value="Price::fromCent($this->totalValue)->formatted"
         />
 
         <x-dashboard.card
             icon="shield-alert"
-            iconTextColor="text-green-600"
-            iconBgColor="bg-green-100"
+            iconTextColor="text-green-600 dark:text-green-400"
+            iconBgColor="bg-green-100 dark:bg-green-900/30"
             :title="__('dashboard.active_warranties')"
             :value="$this->activeWarrantyItemsCount . ' / ' . $this->totalItemsCount"
         />

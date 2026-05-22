@@ -9,7 +9,7 @@
 
     $lineClasses = [
         'border-0',
-        'bg-gray-300 dark:bg-gray-300/30',
+        'bg-gray-200 dark:bg-white/10',
         'mx-1' => $orientation === 'vertical',
         'my-1' => $orientation === 'horizontal',
         match($orientation) {

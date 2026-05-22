@@ -127,14 +127,14 @@ new class extends Component {
 
                     <x-ui.card size="xl" class="flex justify-center items-center flex-col text-center"
                                wire:click="takePhoto">
-                        <x-lucide-camera class="mb-3 p-3 w-12 text-blue-600 bg-blue-100 rounded-full"/>
+                        <x-lucide-camera class="mb-3 p-3 w-12 text-indigo-600 bg-indigo-100 dark:text-indigo-400 dark:bg-indigo-900/30 rounded-full"/>
                         <p class="mb-2 text-sm font-semibold">{{ __('items.form.take_photo') }}</p>
                         <p class="text-xs">{{ __('items.form.touch_to_use_camera') }}</p>
                     </x-ui.card>
 
                     <x-ui.card size="xl" class="flex justify-center items-center flex-col text-center"
                                wire:click="choosePhoto">
-                        <x-lucide-images class="mb-3 p-3 w-12 text-blue-600 bg-blue-100 rounded-full"/>
+                        <x-lucide-images class="mb-3 p-3 w-12 text-indigo-600 bg-indigo-100 dark:text-indigo-400 dark:bg-indigo-900/30 rounded-full"/>
                         <p class="mb-2 text-sm font-semibold">{{ __('items.form.choose_photo') }}</p>
                         <p class="text-xs">{{ __('items.form.touch_to_choose_photo') }}</p>
                     </x-ui.card>
@@ -231,7 +231,7 @@ new class extends Component {
             <x-ui.error name="form.notes"/>
         </x-ui.field>
 
-        <x-ui.button type="submit" size="lg" icon="plus-circle" class="col-span-full shadow">
+        <x-ui.button type="submit" size="lg" icon="plus-circle" color="indigo" class="col-span-full shadow">
             {{ __('Save') }}
         </x-ui.button>
     </form>

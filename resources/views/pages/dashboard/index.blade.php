@@ -32,9 +32,10 @@ new class extends Component {
         <x-dashboard.section-header
             :title="__('dashboard.expiring_soon')"
             icon="calendar-clock"
+            iconColor="text-amber-500 dark:text-amber-400"
         />
 
-        <x-ui.link :href="route('items:index')" variant="soft">
+        <x-ui.link :href="route('items:index')" variant="soft" class="!text-indigo-600 dark:!text-indigo-400">
             <div class="flex items-center gap-1">
                 <span>{{ __('All') }}</span>
                 <x-lucide-arrow-right class="w-5"/>

@@ -58,14 +58,14 @@ new class extends Component {
 <div>
     <div class="flex justify-between items-center my-4">
         <div class="flex items-center gap-3">
-            <a href="{{ route('items:show', $item) }}" class="px-1">
+            <a href="{{ route('items:show', $item) }}" class="px-1 active:opacity-60 transition-opacity">
                 <x-lucide-chevron-left class="w-6"/>
             </a>
 
             <x-ui.heading level="h1" size="md">{{ __('services.service_history') }}</x-ui.heading>
         </div>
 
-        <a href="{{ route('items:services:create', $item) }}" class="mx-1 p-1 text-indigo-600 bg-indigo-600/10 rounded-full">
+        <a href="{{ route('items:services:create', $item) }}" class="mx-1 p-1 text-indigo-600 bg-indigo-600/10 dark:text-indigo-400 dark:bg-indigo-400/15 rounded-full active:opacity-70 transition-opacity">
             <x-lucide-plus class="w-6"/>
         </a>
     </div>
@@ -86,7 +86,7 @@ new class extends Component {
                         </div>
 
                         <button wire:click="openDeleteDialog({{ $service }})"
-                                class="p-2 text-red-700 bg-red-100 rounded-full">
+                                class="p-2 text-red-600 bg-red-100 dark:text-red-400 dark:bg-red-900/30 rounded-full active:opacity-70 transition-opacity">
                             <x-lucide-trash class="w-5"/>
                         </button>
                     </div>

@@ -3,7 +3,7 @@
     'showDate' => false,
 ])
 
-<a href="{{ route('items:show', $item) }}" class="block">
+<a href="{{ route('items:show', $item) }}" class="block active:scale-95 active:opacity-75 duration-200 transition-all ease-in-out cursor-pointer">
     <x-ui.card class="flex justify-between items-center shadow" :wire:key="$item->id">
         <div class="flex items-center gap-3">
             <x-dynamic-component

@@ -42,7 +42,7 @@ new class extends Component {
     <x-ui.heading level="h2" size="xs" class="mb-1 uppercase font-bold">{{ __('Currency') }}</x-ui.heading>
     <x-ui.card class="flex justify-between items-center mb-6">
         <div class="flex items-center gap-4 flex-2/3">
-            <x-lucide-dollar-sign class="p-2.5 w-10 text-indigo-600 bg-indigo-100 rounded-full"/>
+            <x-lucide-dollar-sign class="p-2.5 w-10 text-indigo-600 bg-indigo-100 dark:text-indigo-400 dark:bg-indigo-900/30 rounded-full"/>
             <div class="text-left">
                 <x-ui.heading level="h2">{{ __('settings.default_currency') }}</x-ui.heading>
                 <p class="text-xs">{{ __('settings.for_item_value') }}</p>

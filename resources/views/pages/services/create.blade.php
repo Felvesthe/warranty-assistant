@@ -25,7 +25,7 @@ new class extends Component {
 
 <div>
     <div class="flex items-center gap-3 my-4">
-        <a href="{{ route('items:services:index', $item) }}" class="px-1">
+        <a href="{{ route('items:services:index', $item) }}" class="px-1 active:opacity-60 transition-opacity">
             <x-lucide-chevron-left class="w-6"/>
         </a>
 
@@ -74,7 +74,7 @@ new class extends Component {
             <x-ui.error name="form.price"/>
         </x-ui.field>
 
-        <x-ui.button type="submit" size="lg" icon="plus-circle" class="col-span-full shadow">
+        <x-ui.button type="submit" size="lg" icon="plus-circle" color="indigo" class="col-span-full shadow">
             {{ __('Save') }}
         </x-ui.button>
     </form>

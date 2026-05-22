@@ -30,7 +30,7 @@ return new class extends Component {
 ?>
 
 <div>
-    <native:bottom-nav label-visibility="labeled" :dark="$theme">
+    <native:bottom-nav label-visibility="labeled" :dark="$theme" active-color="#6366f1">
         <native:bottom-nav-item
             id="dashboard"
             icon="home"

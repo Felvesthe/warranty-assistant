@@ -43,7 +43,7 @@
             'cyan' => 'text-white dark:text-white bg-cyan-400 dark:bg-cyan-400 border-cyan-400 dark:border-cyan-400/90',
             'sky' => 'text-white dark:text-white bg-sky-400 dark:bg-sky-400 border-sky-400 dark:border-sky-400/90',
             'blue' => 'text-white dark:text-white bg-blue-400 dark:bg-blue-400 border-blue-400 dark:border-blue-400/90',
-            'indigo' => 'text-white dark:text-white bg-indigo-400 dark:bg-indigo-400 border-indigo-400 dark:border-indigo-400/90',
+            'indigo' => 'text-white dark:text-white bg-indigo-600 dark:bg-indigo-600 border-indigo-600 dark:border-indigo-600/90',
             'violet' => 'text-white dark:text-white bg-violet-400 dark:bg-violet-400 border-violet-400 dark:border-violet-400/90',
             'purple' => 'text-white dark:text-white bg-purple-400 dark:bg-purple-400 border-purple-400 dark:border-purple-400/90',
             'fuchsia' => 'text-white dark:text-white bg-fuchsia-400 dark:bg-fuchsia-400 border-fuchsia-400 dark:border-fuchsia-400/90',

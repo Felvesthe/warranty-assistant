@@ -11,7 +11,7 @@
         :component="'lucide-' . $icon"
         :class="'mb-3 p-2 w-10 rounded-full ' . $iconTextColor . ' ' . $iconBgColor"
     />
-    <p class="mb-1 text-gray-600 text-sm font-semibold uppercase">{{ $title }}</p>
+    <p class="mb-1 text-neutral-500 dark:text-neutral-400 text-sm font-semibold uppercase">{{ $title }}</p>
     <p class="text-base font-bold">
         {{ $value }}
     </p>

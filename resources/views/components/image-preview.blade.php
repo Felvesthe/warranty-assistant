@@ -5,7 +5,7 @@
         src="{{ $src }}"
         alt="{{ $alt }}"
         @click="open = true"
-        {{ $attributes->merge(['class' => 'transition-opacity rounded-lg']) }}
+        {{ $attributes->merge(['class' => 'transition-opacity duration-200 active:opacity-70 cursor-pointer rounded-lg']) }}
     >
 
     <template x-teleport="body">

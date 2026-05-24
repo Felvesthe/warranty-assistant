@@ -57,7 +57,7 @@ return new class extends Component {
             icon="settings"
             :label="__('Settings')"
             :url="route('settings:index')"
-            :active="Route::is('settings:index')"
+            :active="Route::is('settings:*')"
         />
     </native:bottom-nav>
 

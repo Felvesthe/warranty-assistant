@@ -61,7 +61,5 @@ new class extends Component {
         </x-ui.select>
     </x-ui.card>
 
-    <livewire:settings.licenses class="mb-6"/>
-
-    <x-settings.application-info/>
+    <livewire:settings.application-info />
 </div>

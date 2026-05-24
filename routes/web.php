@@ -14,4 +14,7 @@ Route::prefix('items')->as('items:')->group(function (): void {
     Route::livewire('{item}/services/create', 'pages::services.create')->name('services:create');
 });
 
-Route::livewire('settings', 'pages::settings.index')->name('settings:index');
+Route::prefix('settings')->as('settings:')->group(function (): void {
+    Route::livewire('/', 'pages::settings.index')->name('index');
+    Route::livewire('licenses', 'pages::settings.licenses')->name('licenses');
+});

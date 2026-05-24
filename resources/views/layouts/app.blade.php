@@ -71,7 +71,7 @@ $theme = app(UserSettings::class)->theme;
     <body class="antialiased nativephp-safe-area bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-200">
         <div class="statusbar-overlay"></div>
 
-        <div class="mx-3">
+        <div class="mx-3" style="margin-bottom: 6rem;">
             <x-top-bar/>
 
             {{ $slot }}

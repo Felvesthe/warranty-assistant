@@ -23,13 +23,15 @@ $theme = app(UserSettings::class)->theme;
             const loadDarkMode = () => {
                 const theme = @js($theme);
 
-                if (
-                    theme === 'dark' ||
+                const isDark = theme === 'dark' ||
                     (theme === 'system' &&
                         window.matchMedia('(prefers-color-scheme: dark)')
-                            .matches)
-                ) {
-                    document.documentElement.classList.add('dark')
+                            .matches);
+
+                if (isDark) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
                 }
             }
 
@@ -39,8 +41,36 @@ $theme = app(UserSettings::class)->theme;
                 loadDarkMode();
             });
         </script>
+
+        <style>
+            .statusbar-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 999999;
+                pointer-events: none;
+                height: var(--inset-top, env(safe-area-inset-top, 0px));
+                transition: background-color 0.3s;
+                background-color: transparent;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                html:not(.dark) .statusbar-overlay {
+                    background-color: var(--color-indigo-600, #4f46e5);
+                }
+            }
+
+            @media (prefers-color-scheme: light) {
+                html.dark .statusbar-overlay {
+                    background-color: var(--color-indigo-300, #a5b4fc);
+                }
+            }
+        </style>
     </head>
     <body class="antialiased nativephp-safe-area bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-200">
+        <div class="statusbar-overlay"></div>
+
         <div class="mx-3">
             <x-top-bar/>
 

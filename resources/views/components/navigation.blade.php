@@ -43,7 +43,7 @@ return new class extends Component {
             icon="products"
             :label="__('Items')"
             :url="route('items:index')"
-            :active="Route::is('items:index')"
+            :active="Route::is('items:*') && !Route::is('items:create')"
         />
         <native:bottom-nav-item
             id="add-item"

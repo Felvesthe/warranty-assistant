@@ -104,9 +104,20 @@ new class extends Component {
 ?>
 
 <div>
-    <x-page-heading>
-        {{ __($item === null ? 'items.form.add_item' : 'items.form.edit_item') }}
-    </x-page-heading>
+    @if ($item !== null)
+        <div class="flex items-center gap-4">
+            <a href="{{ route('items:show', $item) }}" wire:navigate>
+                <x-lucide-chevron-left class="w-6"/>
+            </a>
+            <x-page-heading>
+                {{ __('items.form.edit_item') }}
+            </x-page-heading>
+        </div>
+    @else
+        <x-page-heading>
+            {{ __('items.form.add_item') }}
+        </x-page-heading>
+    @endif
 
     <form wire:submit="save" class="grid grid-cols-2 gap-x-2.5 gap-y-5">
         @csrf

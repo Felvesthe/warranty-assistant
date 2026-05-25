@@ -22,7 +22,7 @@
         "nativephp/mobile-share": "^1.0.1",
         "nativephp/mobile-system": "^1.0.2",
         "sheaf/cli": "^1.3.5",
-        "spatie/laravel-settings": "^3.8.0",
+        "spatie/laravel-settings": "^3.8.1",
         "wireui/heroicons": "^2.10"
     },
     "require-dev": {
@@ -30,7 +30,7 @@
         "larastan/larastan": "^3.9.6",
         "laravel/pail": "^1.2.6",
         "laravel/pint": "^1.29.1",
-        "log1x/laravel-webfonts": "^2.0",
+        "log1x/laravel-webfonts": "^2.0.1",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.9.4",
         "pestphp/pest": "^4.7.0",

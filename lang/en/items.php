@@ -20,5 +20,6 @@ return [
         'choose_warranty' => 'Choose warranty period',
         'additional_notes' => 'Additional notes',
         'notes' => 'Notes...',
+        'image_alt' => 'Image preview',
     ],
 ];

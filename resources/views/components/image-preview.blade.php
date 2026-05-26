@@ -20,7 +20,11 @@
             @click="open = false"
             class="fixed inset-0 flex justify-center items-center p-4 bg-black/80 backdrop-blur-sm"
         >
-            <x-lucide-x class="absolute top-6 right-3 w-10 h-10 text-white/70" />
+            <button type="button" @click="open = false" 
+                    class="absolute p-2.5 bg-white/10 active:scale-95 active:bg-white/30 border border-white/10 backdrop-blur-md rounded-full text-white transition cursor-pointer z-50"
+                    style="top: calc(env(safe-area-inset-top, 0px) + 1rem); right: calc(env(safe-area-inset-right, 0px) + 1rem);">
+                <x-lucide-x class="w-7 h-7" />
+            </button>
 
             <img
                 :src="open ? '{{ $src }}' : ''"

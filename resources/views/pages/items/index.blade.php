@@ -56,6 +56,7 @@ new class extends Component {
                 :color="$selectedCategory === $category ? 'indigo' : ''"
                 variant="solid"
                 wire:click="changeCategory('{{ $category }}')"
+                class="active:scale-95 transition"
                 pill
             >
                 {{ $category->label() }}

@@ -21,7 +21,7 @@ $theme = app(UserSettings::class)->theme;
             };
 
             const loadDarkMode = () => {
-                const theme = @js($theme);
+                const theme = localStorage.getItem('theme') || @js($theme);
 
                 const isDark = theme === 'dark' ||
                     (theme === 'system' &&

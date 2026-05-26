@@ -127,7 +127,7 @@ new class extends Component {
                 <div class="relative flex justify-center items-center py-1">
                     <img src="{{ Storage::url($form->proofOfPurchase) }}" alt="{{ __('items.form.image_alt') }}" class="max-w-40 max-h-56 rounded-lg">
                     <button type="button" wire:click="deleteUploadedImage"
-                            class="absolute top-2 right-2 p-2 text-indigo-600 bg-indigo-100 dark:text-indigo-400 dark:bg-indigo-900/40 rounded-lg hover:bg-red-100 hover:text-red-600 dark:hover:bg-red-900/50 dark:hover:text-red-400 transition-colors cursor-pointer">
+                            class="absolute top-2 right-2 p-2 text-indigo-600 bg-indigo-100 dark:text-indigo-400 dark:bg-indigo-900/40 rounded-lg active:scale-95 active:bg-red-200 dark:active:bg-red-900/70 transition cursor-pointer">
                         <x-lucide-trash class="w-5 h-5"/>
                     </button>
                 </div>

@@ -6,7 +6,6 @@ return [
     'item_name' => 'Item name',
     'items_not_found' => 'No items found.',
     'valid_warranty' => 'Valid',
-
     'form' => [
         'add_item' => 'Add item',
         'edit_item' => 'Edit item',
@@ -22,4 +21,8 @@ return [
         'notes' => 'Notes...',
         'image_alt' => 'Image preview',
     ],
+    'toasts' => [
+        'add_success' => 'Item added successfully',
+        'edit_success' => 'Item edited successfully',
+    ]
 ];

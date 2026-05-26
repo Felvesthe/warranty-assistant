@@ -16,4 +16,7 @@ return [
         'creating_entry_for' => 'Creating entry for',
         'description_placeholder' => 'What has been fixed?',
     ],
+    'toasts' => [
+        'add_entry_success' => 'Service entry added successfully',
+    ]
 ];

@@ -6,7 +6,6 @@ return [
     'item_name' => 'Nazwa przedmiotu',
     'items_not_found' => 'Nie znaleziono przedmiotów.',
     'valid_warranty' => 'Ważna',
-
     'form' => [
         'add_item' => 'Dodaj przedmiot',
         'edit_item' => 'Edytuj przedmiot',
@@ -22,4 +21,8 @@ return [
         'notes' => 'Uwagi...',
         'image_alt' => 'Podgląd obrazka'
     ],
+    'toasts' => [
+        'add_success' => 'Przedmiot utworzony pomyślnie',
+        'edit_success' => 'Przedmiot edytowany pomyślnie',
+    ]
 ];

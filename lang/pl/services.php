@@ -16,4 +16,7 @@ return [
         'creating_entry_for' => 'Dodajesz wpis dla',
         'description_placeholder' => 'Co zostało naprawione?',
     ],
+    'toasts' => [
+        'add_entry_success' => 'Wpis serwisowy dodany pomyślnie',
+    ]
 ];

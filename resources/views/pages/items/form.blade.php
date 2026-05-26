@@ -34,11 +34,15 @@ new class extends Component {
 
     public function save(): void
     {
-        $this->item === null
+        $isNew = $this->item === null;
+
+        $isNew
             ? $this->form->store()
             : $this->form->update();
 
         $this->redirectRoute('items:index');
+
+        Dialog::toast(__($isNew ? 'items.toasts.add_success' : 'items.toasts.edit_success'));
     }
 
     public function takePhoto(): void

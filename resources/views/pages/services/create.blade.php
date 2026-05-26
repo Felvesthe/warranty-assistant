@@ -4,6 +4,7 @@ use App\Livewire\Forms\ServiceForm;
 use App\Models\Item;
 use Livewire\Component;
 use Illuminate\Support\Str;
+use Native\Mobile\Facades\Dialog;
 
 new class extends Component {
     public Item $item;
@@ -19,6 +20,8 @@ new class extends Component {
         $this->form->store();
 
         $this->redirectRoute('items:services:index', $this->item);
+
+        Dialog::toast(__('services.toasts.add_entry_success'));
     }
 };
 ?>

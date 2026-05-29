@@ -172,18 +172,18 @@ new class extends Component {
 
         <x-ui.field required>
             <x-ui.label class="text-xs uppercase">{{ __('Category') }}</x-ui.label>
-            <x-ui.select
+            <x-select
                 wire:model.live.debounce="form.category"
                 icon="tag"
                 :placeholder="__('items.form.choose_category')"
                 class="text-sm"
             >
                 @foreach(Category::cases() as $key => $value)
-                    <x-ui.select.option :$value :wire:key="$key">
+                    <option value="{{ $value->value }}" wire:key="{{ $key }}">
                         {{ $value->label() }}
-                    </x-ui.select.option>
+                    </option>
                 @endforeach
-            </x-ui.select>
+            </x-select>
             <x-ui.error name="form.category"/>
         </x-ui.field>
 
@@ -211,18 +211,18 @@ new class extends Component {
 
         <x-ui.field required>
             <x-ui.label class="text-xs uppercase">{{ __('Warranty') }}</x-ui.label>
-            <x-ui.select
+            <x-select
                 wire:model.live.debounce="form.warranty"
                 icon="calendar-date-range"
                 :placeholder="__('items.form.choose_warranty')"
                 class="text-sm"
             >
                 @foreach(Warranty::cases() as $key => $value)
-                    <x-ui.select.option :$value :wire:key="$key">
+                    <option value="{{ $value->value }}" wire:key="{{ $key }}">
                         {{ $value->label() }}
-                    </x-ui.select.option>
+                    </option>
                 @endforeach
-            </x-ui.select>
+            </x-select>
             <x-ui.error name="form.warranty"/>
         </x-ui.field>
 

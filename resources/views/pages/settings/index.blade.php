@@ -49,16 +49,16 @@ new class extends Component {
             </div>
         </div>
 
-        <x-ui.select
+        <x-select
             wire:model.live.debounce="currency" class="flex-1/3"
             :placeholder="__('Currency')"
         >
             @foreach (Currency::cases() as $key => $currency)
-                <x-ui.select.option :value="$currency->value" :wire:key="$key">
+                <option value="{{ $currency->value }}" wire:key="{{ $key }}">
                     {{ Str::upper($currency->value) }}
-                </x-ui.select.option>
+                </option>
             @endforeach
-        </x-ui.select>
+        </x-select>
     </x-ui.card>
 
     <livewire:settings.application-info />

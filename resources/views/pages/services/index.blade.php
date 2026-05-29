@@ -3,6 +3,7 @@
 use App\Models\Item;
 use App\Models\Service;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Str;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
 use Native\Mobile\Attributes\OnNative;
@@ -72,7 +73,7 @@ new class extends Component {
 
     <div class="mb-4 text-base">
         <p>{{ __('items.item_name') }}:</p>
-        <p class="font-bold">{{ $item->name }}</p>
+        <p class="font-bold">{{ Str::limit($item->name, 24) }}</p>
     </div>
 
     @if ($this->services->count() > 0)

@@ -37,7 +37,7 @@ new class extends Component {
 
     <div class="mb-4 text-base">
         <p>{{ __('services.form.creating_entry_for') }}:</p>
-        <p class="font-bold">{{ $item->name }}</p>
+        <p class="font-bold">{{ Str::limit($item->name, 24) }}</p>
     </div>
 
     <form wire:submit="save" class="flex flex-col gap-5">

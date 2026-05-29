@@ -1,3 +1,5 @@
+@php use Illuminate\Support\Str; @endphp
+
 @props([
     'item',
     'showDate' => false,
@@ -11,8 +13,8 @@
                 class="p-2 w-8 bg-primary text-primary-fg rounded-full"
             />
             <div>
-                <p class="text-sm font-bold">{{ $item->name }}</p>
-                <p class="text-xs">{{ $item->price->formatted }}</p>
+                <p class="text-sm font-bold">{{ Str::limit($item->name, 12) }}</p>
+                <p class="text-xs">{{ Str::limit($item->price->formatted, 18) }}</p>
             </div>
         </div>
         <div class="flex justify-center items-end flex-col gap-1.5">

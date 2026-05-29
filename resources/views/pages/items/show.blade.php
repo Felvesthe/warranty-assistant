@@ -98,13 +98,13 @@ new class extends Component {
         </div>
     </div>
 
-    <div class="flex justify-center items-center flex-col">
+    <div class="flex justify-center items-center flex-col overflow-hidden">
         <x-dynamic-component
             :component="'lucide-' . $item->category->icon()"
             class="mb-3 p-4 w-16 bg-indigo-600/10 text-indigo-600 dark:bg-indigo-400/15 dark:text-indigo-400 rounded-full"
         />
 
-        <x-ui.heading level="h1" size="lg" class="font-bold">
+        <x-ui.heading level="h1" size="lg" class="font-bold wrap-anywhere text-center">
             {{ $item->name }}
         </x-ui.heading>
 

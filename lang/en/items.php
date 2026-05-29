@@ -6,6 +6,7 @@ return [
     'item_name' => 'Item name',
     'items_not_found' => 'No items found.',
     'valid_warranty' => 'Valid',
+    'include_out_of_warranty' => 'Include out-of-warranty items',
     'form' => [
         'add_item' => 'Add item',
         'edit_item' => 'Edit item',

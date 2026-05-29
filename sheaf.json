@@ -57,6 +57,9 @@
         },
         "dropdown": {
             "installationTime": 1777223451
+        },
+        "checkbox": {
+            "installationTime": 1780076447
         }
     }
 }

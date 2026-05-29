@@ -6,6 +6,7 @@ return [
     'item_name' => 'Nazwa przedmiotu',
     'items_not_found' => 'Nie znaleziono przedmiotów.',
     'valid_warranty' => 'Ważna',
+    'include_out_of_warranty' => 'Uwzględnij przedmioty po gwarancji',
     'form' => [
         'add_item' => 'Dodaj przedmiot',
         'edit_item' => 'Edytuj przedmiot',

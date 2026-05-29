@@ -11,6 +11,7 @@ use Livewire\Component;
 new class extends Component {
     public string $search = '';
     public ?Category $selectedCategory = null;
+    public bool $showWithoutWarranty = true;
 
     #[Computed]
     public function items(): LengthAwarePaginator
@@ -19,6 +20,9 @@ new class extends Component {
             ->whereLike('name', "%$this->search%")
             ->when($this->selectedCategory, function (Builder $query): void {
                 $query->whereLike('category', $this->selectedCategory);
+            })
+            ->when(! $this->showWithoutWarranty, function (Builder $query) {
+                $query->whereDate('warranty_expiration_date', '>=', now());
             })
             ->orderByDesc('created_at')
             ->paginate(config()->integer('pagination.per_page'));
@@ -62,6 +66,13 @@ new class extends Component {
                 {{ $category->label() }}
             </x-ui.badge>
         @endforeach
+    </div>
+
+    <div class="my-6">
+        <x-ui.checkbox
+            wire:model.live.debounce="showWithoutWarranty"
+            :label="__('items.include_out_of_warranty')"
+        />
     </div>
 
     <div class="my-6 space-y-3">

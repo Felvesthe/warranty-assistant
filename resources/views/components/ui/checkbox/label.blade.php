@@ -18,6 +18,7 @@
 <label
     @class($classes)
     data-slot="checkbox-label"
+    @click="toggle()"
 >
     {{ $label }}
 </label>

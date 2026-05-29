@@ -101,7 +101,7 @@ new class extends Component {
 
     private function processImage(string $path, ?string $extension = null): void
     {
-        $fileName = now()->format('Ymd') . '_' . Str::random(10) . '.' . $extension ?? pathinfo($path, PATHINFO_EXTENSION);
+        $fileName = now()->format('Ymd') . '_' . Str::random(10) . '.' . ($extension ?? pathinfo($path, PATHINFO_EXTENSION));
         $this->form->proofOfPurchase = Storage::putFileAs('documents', $path, $fileName);
     }
 };

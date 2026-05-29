@@ -55,19 +55,21 @@ final class EditItem
                 'notes' => $data['notes'],
             ]);
 
-            if ($item->file !== null) {
+            if ($item->file !== null && $item->file->path !== $data['proofOfPurchase']) {
                 Storage::delete($item->file->path);
             }
 
-            $item->file()->updateOrCreate(
-                [
-                    'item_id' => $item->id,
-                ],
-                [
-                    'type' => Storage::mimeType($data['proofOfPurchase']),
-                    'path' => $data['proofOfPurchase'],
-                ]
-            );
+            if ($item->file === null || $item->file->path !== $data['proofOfPurchase']) {
+                $item->file()->updateOrCreate(
+                    [
+                        'item_id' => $item->id,
+                    ],
+                    [
+                        'type' => Storage::mimeType($data['proofOfPurchase']),
+                        'path' => $data['proofOfPurchase'],
+                    ]
+                );
+            }
 
             return $item;
         });

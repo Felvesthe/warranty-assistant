@@ -24,5 +24,5 @@ return [
     'toasts' => [
         'add_success' => 'Item added successfully',
         'edit_success' => 'Item edited successfully',
-    ]
+    ],
 ];

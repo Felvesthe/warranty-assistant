@@ -18,5 +18,5 @@ return [
     ],
     'toasts' => [
         'add_entry_success' => 'Wpis serwisowy dodany pomyślnie',
-    ]
+    ],
 ];

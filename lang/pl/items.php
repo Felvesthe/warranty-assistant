@@ -19,10 +19,10 @@ return [
         'choose_warranty' => 'Wybierz okres gwarancji',
         'additional_notes' => 'Dodatkowe notatki',
         'notes' => 'Uwagi...',
-        'image_alt' => 'Podgląd obrazka'
+        'image_alt' => 'Podgląd obrazka',
     ],
     'toasts' => [
         'add_success' => 'Przedmiot utworzony pomyślnie',
         'edit_success' => 'Przedmiot edytowany pomyślnie',
-    ]
+    ],
 ];

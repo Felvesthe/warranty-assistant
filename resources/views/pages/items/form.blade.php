@@ -192,6 +192,7 @@ new class extends Component {
             <x-ui.input
                 wire:model.live.debounce="form.price"
                 x-mask:dynamic="$money($input, ',', ' ')"
+                inputmode="decimal"
                 placeholder="0,00"
                 leftIcon="currency-dollar"
             />
@@ -203,6 +204,7 @@ new class extends Component {
             <x-ui.input
                 wire:model.live.debounce="form.dateOfPurchase"
                 x-mask="99/99/9999"
+                inputmode="numeric"
                 :placeholder="__('items.form.date_placeholder')"
                 leftIcon="calendar"
             />

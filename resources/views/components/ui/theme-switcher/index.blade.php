@@ -6,19 +6,10 @@
     'iconVariant' => "mini"
 ])
 
-<div
-    class='flex items-center'>
-    <label class="sr-only">
-        Theme
-    </label>
-
-    <div x-data class="w-full">
-        @if ($variant === 'dropdown')
-            <x-ui.theme-switcher.variants.dropdown/>
-        @elseif($variant === 'stacked')
-            <x-ui.theme-switcher.variants.stacked/>
-        @elseif($variant === 'inline')
-            <x-ui.theme-switcher.variants.inline/>
-        @endif
-    </div>
-</div>
+@if ($variant === 'dropdown')
+    <x-ui.theme-switcher.variants.dropdown/>
+@elseif($variant === 'stacked')
+    <x-ui.theme-switcher.variants.stacked/>
+@elseif($variant === 'inline')
+    <x-ui.theme-switcher.variants.inline/>
+@endif
